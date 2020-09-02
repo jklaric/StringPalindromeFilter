@@ -50,19 +50,13 @@ namespace StringPalindromeFilter
 
         static bool IsPalindromeFirst(List<string> inputList)
         {
-            var charList = new List<char>();
             var isPalindromicWord = false;
 
-            foreach (var letter in inputList[0])
+            for (int i = 0; i < inputList[0].Length; i++)
             {
-                charList.Add(letter);
-            }
-
-            for (int i = 0; i < charList.Count; i++)
-            {
-                for (int j = charList.Count - 1; j >= 0; j--)
+                for (int j = inputList[0].Length - 1; j >= 0; j--)
                 {
-                    if (charList[i] == charList[j])
+                    if (inputList[0][i] == inputList[0][j])
                     {
                         isPalindromicWord = true;
                     }
@@ -80,19 +74,13 @@ namespace StringPalindromeFilter
 
         static bool IsPalindromeSecond(List<string> inputList)
         {
-            var charList = new List<char>();
             var isPalindromicWord = false;
 
-            foreach (var letter in inputList[1])
+            for (int i = 0; i < inputList[1].Length; i++)
             {
-                charList.Add(letter);
-            }
-
-            for (int i = 0; i < charList.Count; i++)
-            {
-                for (int j = charList.Count - 1; j >= 0; j--)
+                for (int j = inputList[1].Length - 1; j >= 0; j--)
                 {
-                    if (charList[i] == charList[j])
+                    if (inputList[1][i] == inputList[1][j])
                     {
                         isPalindromicWord = true;
                     }
