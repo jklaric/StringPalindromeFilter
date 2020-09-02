@@ -40,7 +40,7 @@ namespace StringPalindromeFilter
 
             if (IsAnagram(inputList))
             {
-
+                anagramResult = "are";
             }
 
             Console.WriteLine("The first word " + palindromeResultFirst + 
@@ -110,30 +110,19 @@ namespace StringPalindromeFilter
 
         static bool IsAnagram(List<string> inputList)
         {
-            var firstCharList = new List<char>();
-            var secondCharList = new List<char>();
             var isWordAnagram = false;
-
-            foreach (var letter in inputList[0])
-            {
-                firstCharList.Add(letter);
-            }
-
-            foreach (var letter in inputList[1])
-            {
-                secondCharList.Add(letter);
-            }
-
-            firstCharList.Sort();
-            secondCharList.Sort();
 
             if (inputList[0].Length != inputList[1].Length)
             {
                 isWordAnagram = false;
             }
-            else if (firstCharList == secondCharList)
+            else if (inputList[0].All(inputList[1].Contains) && inputList[1].All(inputList[0].Contains))
             {
                 isWordAnagram = true;
+            }
+            else
+            {
+                isWordAnagram = false;
             }
 
             return isWordAnagram;
